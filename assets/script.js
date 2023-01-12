@@ -54,4 +54,3 @@ var sources = [
 	  "resso",
 	  "boomplay"
 	];
-
