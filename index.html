@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Insert Title</title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit Finder</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    
 </head>
 
 <body>
     <header>
-        <nav> <!--what do you want to link?-->
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </nav>
+        <H1>HIT FINDER</H1>
     </header>
     <main>
-        <div>
-            <section><!--Put some classes or id's in here-->
+       
+            <form  class="search" >
+                <input id="search-field" type="text" placeholder="Search for music by song" name="search">
+                <button  type="submit" id="submit">submit</button>
+              </form>
 
-            </section>
-        </div>
-        <div class = "search-bar">
-                <div class="input-field">
-                    <input id="search" type="search" required>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-        </div>
+                <h4>OR</h4>
+            
+                <div class="dropdown col s4">
+                    <div class="select">
+                      <span class="selected">Billboard Lists</span>
+                      <div class="caret"></div>
+                    </div>
+                    <ul class="menu">
+                      <li class="active">Billboard Hot 100</li>
+                <li>Billboard Global 200</li>
+                <li>All Time 100 Songs</li>
+                <li>All Time Summer Songs</li>
+                    </ul>
+                  </div>
+            
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="./assets/Hpage.js"></script>
 </body>
 
 </html>
