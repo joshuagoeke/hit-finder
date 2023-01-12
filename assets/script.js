@@ -1,4 +1,4 @@
-//Billboard100 API   
+Billboard100 API   
 const options = {
 	method: 'GET',
 	headers: {
@@ -30,3 +30,7 @@ fetch('https://musicapi13.p.rapidapi.com/search/introspection', options)
 	.catch(err => console.error(err));
 
 	//Comment to test merging GitHub 
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('select');
+		var instances = M.FormSelect.init(elems, options);
+	  });
