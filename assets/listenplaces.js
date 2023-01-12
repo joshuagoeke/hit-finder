@@ -209,19 +209,36 @@ var tracksEl = testDolly.tracks;
 
 console.log(tracksEl)
 
+//actually use these variables:
+var listEl = document.getElementById('results')
+
 console.log(tracksEl[2].status)
 var hitsHere =[];
 function renderList(){
-    for (i=0; i < tracksEl.length; i++){
-        if (tracksEl[i].status !== "success"){
-            tracksEl.splice(i,1)
-        } //takes out objects with "status: 'error' "
+    //takes out objects with "status: 'error' "
+    var arrLen = tracksEl.length
+    console.log(arrLen)
+    for (i=0; i < arrLen; i++){
+        if (tracksEl[i].status !== 'success'|| tracksEl[i].status == 'error'){
+            console.log(tracksEl[i].source);
+            tracksEl.splice(i,1);
+            console.log(tracksEl.length);
+        } 
     };
-    // for (i=0; i < tracksEl.length; i++){
-    //     if (tracksEl[i].status !== "success"){
-    //         tracksEl.splice(i,1)
-    //     } //takes out objects with "status: 'error' "
-    // };
+    console.log(tracksEl.length);
+    arrLen = tracksEl.length;
+    for (i=0; i < tracksEl.length; i++){
+        var createListItem = document.createElement('li');
+        createListItem.style = "font-size: large;"
+        createListItem.style = "margin: 10px;"
+        var link = document.createElement('a');
+        link.style = "color: white;"
+        // link.setAttribute('href', tracksEl[i].data.url)
+        console.log(tracksEl[i].data.url);
+        // link.textContent = tracksEl[i].data.name + " - " + tracksEl[i].data.artistNames + " on " + tracksEl[i].source + ":\n" + link;
+        // createListItem.appendChild(link);
+        // listEl.appendChild(createListItem);
+    };
     
 };
 

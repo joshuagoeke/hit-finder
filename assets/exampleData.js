@@ -1,4 +1,5 @@
 //this can be copied and pasted to test parsing this massive object
+//this script is NOT linked
 var testDolly = { 
 		"tracks": [
 		  {
