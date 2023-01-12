@@ -1,6 +1,5 @@
-
-	// example MusicAPI return no artist property in search
-	{
+//this can be copied and pasted to test parsing this massive object
+var testDolly = { 
 		"tracks": [
 		  {
 			"source": "amazon-music",
@@ -203,4 +202,19 @@
 		  }
 		]
 	  }
+
+//this works, but is ugly in console:
+// var hitsHere =[];
+// function renderList(){
+//     for (i=0; i < tracksEl.length; i++){
+//         if (tracksEl[i].status == "success"){
+//             hitsHere.push(tracksEl[i])
+//         }
+//     }
+    
+// };
+
+// renderList();
+// console.log("hitsHere: " + JSON.stringify(hitsHere));
+
 
