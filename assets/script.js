@@ -28,3 +28,5 @@ fetch('https://musicapi13.p.rapidapi.com/search/introspection', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+	//Comment to test merging GitHub 
