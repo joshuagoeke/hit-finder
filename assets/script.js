@@ -1,4 +1,4 @@
-//Billboard100 API   
+Billboard100 API   
 const options = {
 	method: 'GET',
 	headers: {
