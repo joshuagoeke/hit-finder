@@ -1,4 +1,4 @@
-//Billboard100 API   
+Billboard100 API   
 const options = {
 	method: 'GET',
 	headers: {
@@ -30,3 +30,27 @@ fetch('https://musicapi13.p.rapidapi.com/search/introspection', options)
 	.catch(err => console.error(err));
 
 	//Comment to test merging GitHub 
+
+//Sources List for Music API
+var sources = [
+	  "amazon-music",
+	  "apple-music",
+	  "deezer",
+	  "pandora",
+	  "sound-cloud",
+	  "spotify",
+	  "tidal",
+	  "youtube",
+	  "youtube-music",
+	  "napster",
+	  "qobuz",
+	  "qq-music",
+	  "yandex-music",
+	  "vk",
+	  "anghami",
+	  "zvuk",
+	  "gaana",
+	  "jiosaavn",
+	  "resso",
+	  "boomplay"
+	];
