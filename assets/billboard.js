@@ -52,27 +52,19 @@ function getApi() {
   console.log(apiChoice)
   
   if(apiChoice == "All Time 100 Songs"){
-    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/greatest-hot-100-singles?range=1-10"
-    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "Billboard Hot 100"){
-    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/hot-100?date=2022-07-07&range=1-10"
-    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "Billboard Global 200"){
-    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/billboard-global-200?date=2021-07-07&range=1-10"
-    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "All Time Summer Songs"){
-    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/greatest-of-all-time-songs-of-the-summer?range=1-10"
-    console.log(apiGet)
     console.log(apiUrl)
   }
 
@@ -80,29 +72,41 @@ function getApi() {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key': '5efa58815emsh6280383a06b5a25p1cb931jsn08fce52522f3',
-          'X-RapidAPI-Host': apiGet
+          'X-RapidAPI-Host': "billboard3.p.rapidapi.com"
         }
       };
 // The api URL, and options var is passed into the fetch api function, and the api is called 
       fetch(apiUrl, options)
         .then(response => response.json())
-        .then(function  (data) {
-          console.log(data)
+        .then(function  (results) {
+          console.log(results)
  
 
 //Loop over the data to generate List Items, each list item will have a link that will call the MusicAPI and redirect to the "where to listen to page".
-      for (var i = 0; i < data.length; i++) {
-// Creating elements: list Item & link. Styling is added to the list items. They are rendered on the page. 
-        var createListItem = document.createElement('li');
-        createListItem.style = "font-size: large;"
-        createListItem.style = "margin: 10px;"
-        var link = document.createElement('a');
-        link.style = "color: white;"
-        link.textContent = data[i].rank + ". " + data[i].title + " - " + data[i].artist;
-        createListItem.appendChild(link);
-        listElement.appendChild(createListItem);
-      }
-    });
+//       for (var i = 0; i < data.length; i++) {
+// // Creating elements: list Item & link. Styling is added to the list items. They are rendered on the page. 
+        for (var i = 0; i < results.length; i++) {
+          // Creating elements: list Item & link.
+    
+          var title = results[i].title
+          var artist = results[i].artist
+    
+          var createListItem = document.createElement('li');  
+          var createListItem2 = document.createElement('li');  
+          createListItem.style = "margin: 10px;"
+          createListItem.style = "color: white;"
+          createListItem.textContent = title
+          createListItem.style = "font-size: 30px"
+          createListItem2.textContent = artist
+          listElement.appendChild(createListItem);
+          listElement.appendChild(createListItem2)
+          createListItem.addEventListener('click', function clicked(event){
+            var ok = event.target.textContent
+            localStorage.setItem("apiBodyTitle", ok)
+            window.location.assign("./listenplaces.html")
+      })
+    }
+  })
 }
 
 fetchButton.addEventListener('click', getApi);
