@@ -142,15 +142,35 @@ var testDolly = {
         "type": "track"
       },
       {
-        "source": "qobuz",
-        "status": "error",
-        "data": null,
+        "source": "qobuz", 
+        "status": "success",
+        "data": {
+            "externalId": "UbxUSsFXYo4",
+            "previewUrl": null,
+            "name": null,
+            "artistNames": "dork",
+            "albumName": "",
+            "imageUrl": "https://i.ytimg.com/vi/UbxUSsFXYo4/mqdefault.jpg",
+            "isrc": "",
+            "duration": null,
+            "url": 'https://i.ytimg.com/vi/UbxUSsFXYo4/mqdefault.jpg',
+          },
         "type": "track"
       },
       {
         "source": "qq-music",
-        "status": "error",
-        "data": null,
+        "status": "success",
+        "data": {
+            "externalId": "UbxUSsFXYo4",
+            "previewUrl": null,
+            "name": "dork",
+            "artistNames": null,
+            "albumName": "",
+            "imageUrl": "https://i.ytimg.com/vi/UbxUSsFXYo4/mqdefault.jpg",
+            "isrc": "",
+            "duration": null,
+            "url": 'https://i.ytimg.com/vi/UbxUSsFXYo4/mqdefault.jpg',
+          },
         "type": "track"
       },
       {
@@ -213,29 +233,57 @@ console.log(tracksEl[2].data.url) //works as long as the data value isn't null, 
 // var tracksEl;
 function renderList(){
     //takes out objects with "status: 'error' "
-    console.log(tracksEl.length)
-    for (var i=tracksEl.length-1 ; i >= 0 ; i--){
-        if (tracksEl[i].status !== 'success') {
-            console.log(tracksEl[i].source);
-            tracksEl.splice([i],1);
-            console.log(tracksEl.length);
+    function dataParser(arr){
+    console.log(arr.length)
+    for (var i=arr.length-1 ; i >= 0 ; i--){
+        if (arr[i].status !== 'success') {
+            console.log("error: " + arr[i].source);
+            arr.splice([i],1);
+            console.log(arr.length);
         } 
     };
-    console.log(tracksEl)
+    for (var j=arr.length-1 ; j >= 0 ; j--){
+        if (arr[j].data.url === null) {
+            console.log("no URL: "+ arr[j].source);
+            arr.splice([j],1);
+            console.log(arr.length);
+        } 
+    };
+    console.log(arr);
+    for (var k=arr.length-1 ; k >= 0 ; k--){
+        if (arr[k].data.name === null){
+            console.log("no trackname: "+ arr[k].source);
+            arr.splice([k],1);
+            console.log(arr.length);
+        }
+
+    };
+    for (var l=arr.length-1 ; l >= 0 ; l--){
+        if (arr[l].data.artistNames === null){
+            console.log("no ArtistName: "+ arr[l].source);
+            arr[l].data.artistNames = "none given";
+            console.log(arr[l]);
+            console.log(arr.length);
+        }
+
+    };
+    }
+    dataParser(tracksEl);
+    // console.log(tracksEl)    
+    // for ( var j=0; j < tracksEl.length; j++){
+    //     var createListItem = document.createElement('li');
+    //     createListItem.style = "font-size: large;"
+    //     createListItem.style = "margin: 10px;"
+    //     var link = document.createElement('a');
+    //     link.style = "color: white;"
+    //     // console.log(tracksEl[j].data.url);
+    //     link.setAttribute('href', tracksEl[j].data.url);
+    //     console.log(tracksEl[j]);
+    //     link.textContent = tracksEl[j].data.name + " - " + tracksEl[j].data.artistNames + " on " + tracksEl[j].source + ":\n" + link;
+    //     createListItem.appendChild(link);
+    //     listEl.appendChild(createListItem); //something broke here? 
+    // };
 
     
-    for ( var j=0; j < tracksEl.length; j++){
-        var createListItem = document.createElement('li');
-        createListItem.style = "font-size: large;"
-        createListItem.style = "margin: 10px;"
-        var link = document.createElement('a');
-        link.style = "color: white;"
-        // console.log(tracksEl[j].data.url);
-        link.setAttribute('href', tracksEl[j].data.url);
-        console.log(tracksEl[j]);
-        link.textContent = tracksEl[j].data.name + " - " + tracksEl[j].data.artistNames + " on " + tracksEl[j].source + ":\n" + link;
-        createListItem.appendChild(link);
-        listEl.appendChild(createListItem); //something broke here? 
-    };
 };
 renderList();
