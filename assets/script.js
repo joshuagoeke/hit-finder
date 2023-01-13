@@ -45,7 +45,6 @@ var sources = [
 	  "napster",
 	  "qobuz",
 	  "qq-music",
-	  "yandex-music",
 	  "vk",
 	  "anghami",
 	  "zvuk",
