@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/css/billboard.css">
+
+    <title>Billboard</title>
+</head>
+    <body class="grey darken-4 row">
+        <nav class="black">
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="billboard.html">Home</a></li>
+                    <li><a href="myplaylist.html">My Playlist</a></li>
+                </ul>
+            </div>
+        </nav>
+      <header class="col s12">
+        <h1 class="white-text center-align">Billboard</h1>
+      </header>
+      <main class="grey darken-4">
+        <section class="grey darken-4">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">Billboard Lists</span>
+              <div class="caret"></div>
+            </div>
+              <ul class="menu">
+                <li class="active">Billboard Hot 100</li>
+                <li>Billboard Global 200</li>
+                <li>All Time 100 Songs</li>
+                <li>All Time Summer Songs</li>
+              </ul>
+          </div>
+          <div class="center-align">
+            <button class="waves-effect waves-light btn black" id="fetch-button">
+              Find Hits
+            </button>
+            <!-- <button class="waves-effect waves-light btn black" id="testbtn">
+              Test
+            </button> -->
+          </div>
+          <header class="grey darken-4 row">
+              <h2 class="white-text col s12 center-align"  id="list-title">
+                Billboard Top 10 List
+              </h2>
+          </header>
+            <h3 class="white-text center-align">Results</h3>
+              <div class="col s12">
+                <ul id="results-list" class="center-align">
+                </ul>
+              </div>
+        </section>
+      </main>         
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../assets/billboard.js"></script> 
+</body>
+</html>
