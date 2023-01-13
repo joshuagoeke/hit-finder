@@ -225,7 +225,7 @@ var tracksEl = testDolly.tracks;
 console.log(tracksEl)
 
 //actually use these variables:
-var listEl = document.getElementById('results')
+var listEl = document.getElementById('results-list')
 
 console.log(tracksEl[2].status)
 console.log(tracksEl[2].data.url) //works as long as the data value isn't null, which is why we need to toss errors out
@@ -269,20 +269,21 @@ function renderList(){
     };
     }
     dataParser(tracksEl);
-    // console.log(tracksEl)    
-    // for ( var j=0; j < tracksEl.length; j++){
-    //     var createListItem = document.createElement('li');
-    //     createListItem.style = "font-size: large;"
-    //     createListItem.style = "margin: 10px;"
-    //     var link = document.createElement('a');
-    //     link.style = "color: white;"
-    //     // console.log(tracksEl[j].data.url);
-    //     link.setAttribute('href', tracksEl[j].data.url);
-    //     console.log(tracksEl[j]);
-    //     link.textContent = tracksEl[j].data.name + " - " + tracksEl[j].data.artistNames + " on " + tracksEl[j].source + ":\n" + link;
-    //     createListItem.appendChild(link);
-    //     listEl.appendChild(createListItem); //something broke here? 
-    // };
+    console.log(tracksEl)    
+
+
+
+    for ( var m=0; m < tracksEl.length; m++){
+        var createListItem = document.createElement('li');
+        createListItem.style = "font-size: large;"
+        createListItem.style = "margin: 10px;"
+        var link = document.createElement('a');
+        link.style = "color: white;"
+        link.setAttribute('href', tracksEl[m].data.url);
+        link.textContent = tracksEl[m].data.name + " - " + tracksEl[m].data.artistNames + " on " + tracksEl[m].source + ":\n" + link;
+        createListItem.appendChild(link);
+        listEl.appendChild(createListItem); 
+    };
 
     
 };
