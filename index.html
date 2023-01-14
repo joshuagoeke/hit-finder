@@ -7,35 +7,37 @@
     <title>Hit Finder</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/Landingpage.css"/>
+    
+  <ul>
+    <li><a class="hover-underline-animation" >Home</a></li>
+    <li><a class="hover-underline-animation" >My Playlist</a></li>
+  </ul>
     
 </head>
 
 <body>
+  
     <header>
+
         <H1>HIT FINDER</H1>
     </header>
     <main>
-       
+          <div class="container">
             <form  class="search" >
                 <input id="search-field" type="text" placeholder="Search for music by song" name="search">
-                <button  type="submit" id="submit">submit</button>
+                  <button  type="submit" id="submit">Find</button></form>
               </form>
 
                 <h4>OR</h4>
-            
-                <div class="dropdown col s4">
-                    <div class="select">
-                      <span class="selected">Billboard Lists</span>
-                      <div class="caret"></div>
-                    </div>
-                    <ul class="menu">
-                      <li class="active">Billboard Hot 100</li>
-                <li>Billboard Global 200</li>
-                <li>All Time 100 Songs</li>
-                <li>All Time Summer Songs</li>
-                    </ul>
-                  </div>
-            
+              
+              <p class="image-billboard">
+                <a href="./pages/billboard.html/">
+                  <img class="image-billboard" src="assets/images/image billboard.png">
+                </a>
+              </p>
+        
+          </div>
     </main>
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

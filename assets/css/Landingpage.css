@@ -1,0 +1,113 @@
+body {
+    background-color: #23242a;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    font-size: 18px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.hover-underline-animation{
+    display: inline-block;
+    position: relative;
+    color:white;
+}
+
+.hover-underline-animation::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+h1{
+    font-size: 80px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 150px;
+}
+
+button {
+color: #23242a;
+font-size: large;
+font-family: 'Times New Roman', Times, serif;
+margin-top: 10px;
+}
+
+button:hover {
+background-color: black;
+color: white;
+}
+
+.container {
+    width: fit-content;
+    column-count: 3;
+    column-gap: 0px;
+    column-rule: 2px solid white;
+    padding-top: 50px;
+    
+}
+
+h4 {
+    padding-top: 45px;
+}
+
+form.search {
+    padding-top: 25px;
+    padding-right: 30px;
+    font-size: large;
+}
+
+input {
+    text-align: center;
+}
+
+div.dropdown.col.s4{
+    top: 10px;
+    background-color: transparent;
+    border-block-style: solid;
+    border-block-color: white;
+}
+
+.image-billboard{
+opacity: 1;
+transition: .3s ease;
+height: 100px;
+width: 120px;
+padding-left: 20px;
+}
+
+.image-billboard:hover{
+    opacity: .8;
+    color: lightgray;
+}
