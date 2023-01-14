@@ -1,26 +1,20 @@
 //testDolly is enormous, so paste here to test, then delete. Minimize while testing for easier scrolling
+console.log("save the Functions!");
 
+//variables
+var searchObject = '{"track":"9 to 5","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+var tracksEl;
+var listEl = document.getElementById('results-list')
+// var resultsHandl;
 //API search request
 
-var searchObject = 
 
+//take that big hairy object, clean it, and put the info we want in the DOM
 
-console.log(testDolly.tracks.length);
-
-var tracksEl = testDolly.tracks;
-
-console.log(tracksEl)
-
-//actually use these variables:
-var listEl = document.getElementById('results-list')
-
-console.log(tracksEl[2].status)
-console.log(tracksEl[2].data.url) //works as long as the data value isn't null, which is why we need to toss errors out
-
-// var tracksEl;
-function renderList(){
+function renderList(object){
+    tracksEl = object.tracks;
     //takes out objects with "status: 'error' "
-    function dataParser(arr){
+    function theCleaner(arr){
     console.log(arr.length)
     for (var i=arr.length-1 ; i >= 0 ; i--){
         if (arr[i].status !== 'success') {
@@ -55,10 +49,8 @@ function renderList(){
 
     };
     }
-    dataParser(tracksEl);
+    theCleaner(tracksEl);
     console.log(tracksEl)    
-
-
 
     for ( var m=0; m < tracksEl.length; m++){
         var createListItem = document.createElement('li');
@@ -74,4 +66,35 @@ function renderList(){
 
     
 };
-renderList();
+
+// API Call
+function musicAPIcall(){
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '7cd2cf7430mshe9e159f72142c49p1c67e0jsn0526c36f4cef',
+            'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
+        },
+        body: searchObject,
+    };
+    
+    fetch('https://musicapi13.p.rapidapi.com/search', options)
+        .then(response => response.json())
+        // .then(response => console.log(response))
+        .then(response => renderList(response))
+        .catch(err => console.error(err));   
+    
+}
+
+ 
+//end of API call ^
+
+// USE THIS CODE BLOXK IN YOUR JAVASCRIPT FILE
+
+const testBtn = document.getElementById('testbtn')
+
+testBtn.addEventListener('click', () => {
+    console.log('test button clicked')
+    musicAPIcall()
+});
