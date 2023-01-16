@@ -83,23 +83,32 @@ function getApi() {
  
 
 //Loop over the data to generate List Items, each list item will have a link that will call the MusicAPI and redirect to the "where to listen to page".
-//       for (var i = 0; i < data.length; i++) {
-// // Creating elements: list Item & link. Styling is added to the list items. They are rendered on the page. 
+// Creating list Item elements Styling is added to the list items. They are rendered on the page. Event listener and function added to <li> 
         for (var i = 0; i < results.length; i++) {
-          // Creating elements: list Item & link.
-    
+          
+          // creating variables for API data and style attributes
           var title = results[i].title
           var artist = results[i].artist
-    
+          var styles = {
+            "margin" : "10px",
+            "color" : "white",
+            "font-size" : "30px"
+          }
+          // Creating list item elements
           var createListItem = document.createElement('li');  
-          var createListItem2 = document.createElement('li');  
-          createListItem.style = "margin: 10px;"
-          createListItem.style = "color: white;"
+          var createListItem2 = document.createElement('li');
+
+          // assigning style attributes 
+          Object.assign(createListItem.style, styles)
+          // assigning API data to text content attributes
           createListItem.textContent = title
-          createListItem.style = "font-size: 30px"
           createListItem2.textContent = artist
+          // appending list item elements to ul element on HTML page
           listElement.appendChild(createListItem);
           listElement.appendChild(createListItem2)
+          // adding event listener and function to be triggered on click 
+          // function adds clicked song to local storage to be later used in Music API on next page. 
+          // user is redirected to Listen Page
           createListItem.addEventListener('click', function clicked(event){
             var ok = event.target.textContent
             localStorage.setItem("apiBodyTitle", ok)
