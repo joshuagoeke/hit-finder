@@ -59,3 +59,7 @@ Takes two numbers and returns the sum.
 
 What did you learn while building this project? What challenges did you face and how did you overcome them?
 
+##Live Site
+
+Check out the Live Site here: https://joshuagoeke.github.io/hit-finder/index.html
+
