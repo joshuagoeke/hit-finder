@@ -11,14 +11,17 @@ var listEl = document.getElementById('results-list')
 
 //puts song name in API format when only song name is stored in local storage.
 function makeSearchObject(){
-    storedSongTitle = localStorage.getItem("apiBodyTitle")
-    console.log("from local storage: " + storedSongTitle)
-    searchObject  = '{"track":"' + storedSongTitle + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
-    console.log(searchObject)
-    rickAstley.textContent = storedSongTitle + " - Rick Astley"
+    // storedSongTitle = localStorage.getItem("apiBodyTitle")
+    // console.log("from local storage: " + storedSongTitle)
+    // searchObject  = '{"track":"' + storedSongTitle + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+    searchObject = localStorage.getItem("apiBodyTitle")
+    var titleGrab = JSON.parse(searchObject)
+    console.log(titleGrab)
+    rickAstley.textContent = titleGrab.track + " - " + titleGrab.artist
 }
 
 makeSearchObject();
+
 
 //take that big hairy response object, clean it, and put the info we want in the DOM
 
@@ -98,14 +101,15 @@ function musicAPIcall(){
     
 }
 
- 
+musicAPIcall()
+
 //end of API call ^
 
-// USE THIS CODE BLOXK IN YOUR JAVASCRIPT FILE
+// TEST BUTTON
 
-const testBtn = document.getElementById('testbtn')
+// const testBtn = document.getElementById('testbtn')
 
-testBtn.addEventListener('click', () => {
-    console.log('test button clicked')
-    musicAPIcall()
-});
+// testBtn.addEventListener('click', () => {
+//     console.log('test button clicked')
+//     musicAPIcall()
+// });
