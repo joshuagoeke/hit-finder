@@ -1,7 +1,6 @@
 body {
     background-color: #23242a;
-    margin: auto;
-    width: 50%;
+    margin: 0;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -76,19 +75,20 @@ color: white;
     column-count: 3;
     column-gap: 0px;
     column-rule: 2px solid white;
-    padding-top: 50px;
-    
+    padding: 30px;
 }
 
 h4 {
-    padding-top: 45px;
+    padding-top: 0px;
 }
 
 form.search {
     padding-top: 25px;
-    padding-right: 30px;
-    font-size: large;
-    width: 300px;
+    padding-right: 10px;
+    font-size: 50px;
+    height: auto;
+    width: 400px;
+    float: right;
 }
 
 input {
@@ -108,7 +108,8 @@ transition: .3s ease;
 height: 100px;
 width: 120px;
 object-fit: cover;
-padding-left: 20px;
+padding-left:10px;
+float: right 20px;
 }
 
 .image-billboard:hover{
@@ -122,16 +123,25 @@ padding-left: 20px;
     grid-template-columns: 100%;
     grid-column-gap: 0;
     grid-row-gap: 20px;
+    align-items: center;
     
   }
  
 
-  @media only screen and (min-width: 981px) {
+  @media only screen and (min-width: 1400px) {
     .grid_items {
       grid-template-columns: 30% 30% 30%;
       grid-row-gap: 50px;
     }
     .grid_items > div {
-      padding: 30px;
+      padding: 10px;
+      padding-left: 50px;
     }
   }
+
+  .Hit-Finder {
+    padding-top: 80px;
+    max-width: 100%;
+    height: auto;
+  }
+
