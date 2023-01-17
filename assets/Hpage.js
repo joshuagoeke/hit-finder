@@ -8,6 +8,11 @@ submitb.addEventListener("click", function(){
     event.preventDefault()
     var input= document.getElementById('search-field').value;
     console.log(input);
+    var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+    localStorage.setItem("apiBodyTitle", searchDeez);
+    window.location.assign("./pages/listenplaces.html");
+    
+
 })
 
 const dropdowns = document.querySelectorAll('.dropdown');  
