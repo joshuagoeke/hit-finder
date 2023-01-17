@@ -71,7 +71,7 @@ function getApi() {
       var options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '5efa58815emsh6280383a06b5a25p1cb931jsn08fce52522f3',
+          'X-RapidAPI-Key': '7cd2cf7430mshe9e159f72142c49p1c67e0jsn0526c36f4cef',
           'X-RapidAPI-Host': "billboard3.p.rapidapi.com"
         }
       };
@@ -96,22 +96,22 @@ function getApi() {
           }
           // Creating list item elements
           var createListItem = document.createElement('li');  
-          var createListItem2 = document.createElement('li');
-
           // assigning style attributes 
           Object.assign(createListItem.style, styles)
           // assigning API data to text content attributes
-          createListItem.textContent = title
-          createListItem2.textContent = artist
+          createListItem.textContent = title + " - " + artist
           // appending list item elements to ul element on HTML page
           listElement.appendChild(createListItem);
-          listElement.appendChild(createListItem2)
           // adding event listener and function to be triggered on click 
-          // function adds clicked song to local storage to be later used in Music API on next page. 
+          // function adds clicked song title and artist to local storage to be later used in Music API on next page. 
           // user is redirected to Listen Page
           createListItem.addEventListener('click', function clicked(event){
             var ok = event.target.textContent
-            localStorage.setItem("apiBodyTitle", ok)
+            console.log(ok)
+            var trackArtist = ok.split(" - ")
+            console.log(trackArtist)
+            var searchDeez = '{"track":"' + trackArtist[0] + '","artist":"' + trackArtist[1] + '","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+            localStorage.setItem("apiBodyTitle", searchDeez)
             window.location.assign("./listenplaces.html")
       })
     }
