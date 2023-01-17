@@ -25,6 +25,16 @@ submitb.addEventListener("click", function(event){
           Object.assign(error.style, clear)})
           return;
 
-    }else
-    console.log(input);
+    }else{
+   
+          var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+          localStorage.setItem("apiBodyTitle", searchDeez);
+          window.location.assign("./pages/listenplaces.html");
+    
+    }
 })
+
+
+
+
+
