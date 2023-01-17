@@ -1,67 +1,55 @@
-console.log("hey hey hey!");
+console.log("results page MVP!");
 
 //variables
-var storedSongTitle;
 var rickAstley = document.querySelector("h2")
 var searchObject;
 var tracksEl;
 var listEl = document.getElementById('results-list')
 
-// var resultsHandl;
 
-//puts song name in API format when only song name is stored in local storage.
-function makeSearchObject(){
-    storedSongTitle = localStorage.getItem("apiBodyTitle")
-    console.log("from local storage: " + storedSongTitle)
-    searchObject  = '{"track":"' + storedSongTitle + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
-    console.log(searchObject)
-    rickAstley.textContent = storedSongTitle + " - Rick Astley"
+//JSON parse of searchObject AND puts the song name and artist in the search title
+function parseAndTitle(){
+    searchObject = localStorage.getItem("apiBodyTitle")
+    var titleGrab = JSON.parse(searchObject)
+    // console.log(titleGrab)
+    rickAstley.textContent = titleGrab.track + " - " + titleGrab.artist
 }
 
-makeSearchObject();
+parseAndTitle();
+
 
 //take that big hairy response object, clean it, and put the info we want in the DOM
 
 function renderList(object){
     tracksEl = object.tracks;
-    //takes out objects with "status: 'error' "
+    //takes out objects with "status: 'error'" & null data properties 
     function theCleaner(arr){
     console.log(arr.length)
     for (var i=arr.length-1 ; i >= 0 ; i--){
         if (arr[i].status !== 'success') {
-            // console.log("error: " + arr[i].source);
             arr.splice([i],1);
-            // console.log(arr.length);
         } 
     };
     for (var j=arr.length-1 ; j >= 0 ; j--){
         if (arr[j].data.url === null) {
-            // console.log("no URL: "+ arr[j].source);
             arr.splice([j],1);
-            // console.log(arr.length);
         } 
     };
     console.log(arr);
     for (var k=arr.length-1 ; k >= 0 ; k--){
         if (arr[k].data.name === null){
-            // console.log("no trackname: "+ arr[k].source);
             arr.splice([k],1);
-            // console.log(arr.length);
         }
 
     };
+    //sets unknown artist names as "Artist Name Unknown"
     for (var l=arr.length-1 ; l >= 0 ; l--){
         if (arr[l].data.artistNames === null){
-            // console.log("no ArtistName: "+ arr[l].source);
             arr[l].data.artistNames = "Artist Name Unknown";
-            // console.log(arr[l]);
-            // console.log(arr.length);
         }
-
     };
     }
-    theCleaner(tracksEl);
-    // console.log(tracksEl)    
+    theCleaner(tracksEl);   
 
     //this part builds the list from the clean results
     for ( var m=0; m < tracksEl.length; m++){
@@ -98,14 +86,15 @@ function musicAPIcall(){
     
 }
 
- 
+musicAPIcall()
+
 //end of API call ^
 
-// USE THIS CODE BLOXK IN YOUR JAVASCRIPT FILE
+// TEST BUTTON (for testing)
 
-const testBtn = document.getElementById('testbtn')
+// const testBtn = document.getElementById('testbtn')
 
-testBtn.addEventListener('click', () => {
-    console.log('test button clicked')
-    musicAPIcall()
-});
+// testBtn.addEventListener('click', () => {
+//     console.log('test button clicked')
+//     musicAPIcall()
+// });
