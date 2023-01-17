@@ -96,18 +96,14 @@ function getApi() {
           }
           // Creating list item elements
           var createListItem = document.createElement('li');  
-          // var createListItem2 = document.createElement('li');
-
           // assigning style attributes 
           Object.assign(createListItem.style, styles)
           // assigning API data to text content attributes
           createListItem.textContent = title + " - " + artist
-          // createListItem2.textContent = artist
           // appending list item elements to ul element on HTML page
           listElement.appendChild(createListItem);
-          // listElement.appendChild(createListItem2)
           // adding event listener and function to be triggered on click 
-          // function adds clicked song to local storage to be later used in Music API on next page. 
+          // function adds clicked song title and artist to local storage to be later used in Music API on next page. 
           // user is redirected to Listen Page
           createListItem.addEventListener('click', function clicked(event){
             var ok = event.target.textContent
