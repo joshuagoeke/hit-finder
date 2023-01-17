@@ -12,7 +12,12 @@ function parseAndTitle(){
     searchObject = localStorage.getItem("apiBodyTitle")
     var titleGrab = JSON.parse(searchObject)
     // console.log(titleGrab)
-    rickAstley.textContent = titleGrab.track + " - " + titleGrab.artist
+    if (titleGrab.artist.length <= 0){
+        rickAstley.textContent = '"' + titleGrab.track + '"'
+    } else {
+        rickAstley.textContent = titleGrab.track + " - " + titleGrab.artist
+    }
+    
 }
 
 parseAndTitle();
