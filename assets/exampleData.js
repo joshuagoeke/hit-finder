@@ -1,5 +1,6 @@
 //this can be copied and pasted to test parsing this massive object
 //this script is NOT linked
+//MUSIC API DATA
 var testDolly = {
     "tracks": [
       {
@@ -199,18 +200,157 @@ var testDolly = {
     ]
   }
 
-//this works, but is ugly in console:
-// var hitsHere =[];
-// function renderList(){
-//     for (i=0; i < tracksEl.length; i++){
-//         if (tracksEl[i].status == "success"){
-//             hitsHere.push(tracksEl[i])
-//         }
-//     }
-    
-// };
-
-// renderList();
-// console.log("hitsHere: " + JSON.stringify(hitsHere));
 
 
+// BILLBOARD DATA
+
+var testBill = [
+  {
+    "artist": "Tyler, The Creator",
+    "title": "Call Me If You Get Lost",
+    "image": "https://charts-static.billboard.com/img/2011/05/tyler-the-creator-556-180x180.jpg",
+    "award": true,
+    "awardsList": [
+      {
+        "awardName": "Highest ranking debut",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 145.888 172.944\"><g data-name=\"Group 4\" transform=\"translate(-167.556 -156.5)\"><circle data-name=\"Ellipse 495\" cx=\"36\" cy=\"36\" r=\"36\" transform=\"translate(204.5 176.5)\" fill=\"#fcee21\"></circle><path data-name=\"Path 3008\" d=\"M240.5 236.5a24 24 0 10-24-24 24.027 24.027 0 0024 24zm0-40a16 16 0 11-16 16 16.019 16.019 0 0116-16z\" fill=\"#1a48c4\"></path><path data-name=\"Path 3009\" d=\"M207.71 309.367l18.769 18.768 14.021-49.074 14.021 49.074 18.769-18.768 40.154 20.077-37.015-74.032a56 56 0 10-71.858 0l-37.015 74.032zm87.846 2.189l-23.846-11.923-13.231 13.232-12.748-44.618a55.6 55.6 0 0024.128-8.086zM192.5 212.5a48 48 0 1148 48 48.055 48.055 0 01-48-48zm42.769 55.747l-12.748 44.618-13.231-13.232-23.846 11.923 25.7-51.395a55.6 55.6 0 0024.125 8.086z\" fill=\"#1a48c4\"></path></g></svg>"
+      },
+      {
+        "awardName": "Gains In Performance",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 128 171.211\"><g data-name=\"Group 12\"><path data-name=\"Path 3036\" d=\"M0 87.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3037\" d=\"M0 127.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3038\" d=\"M0 167.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3039\" d=\"M24.526 59.211H44v112h40v-112h19.474L64 0zm51.474-8v112H52v-112H39.474L64 14.422l24.526 36.789z\" fill=\"#1a48c4\"></path></g></svg>"
+      }
+    ],
+    "rank": 1,
+    "lastWeek": 0,
+    "change": "new",
+    "peakPosition": 1,
+    "weeksOnChart": 1
+  },
+  {
+    "artist": "Doja Cat",
+    "title": "Planet Her",
+    "image": "https://charts-static.billboard.com/img/2021/07/doja-cat-lm6-planet-her-ja0-180x180.jpg",
+    "award": true,
+    "awardsList": [
+      {
+        "awardName": "Gains In Performance",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 128 171.211\"><g data-name=\"Group 12\"><path data-name=\"Path 3036\" d=\"M0 87.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3037\" d=\"M0 127.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3038\" d=\"M0 167.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3039\" d=\"M24.526 59.211H44v112h40v-112h19.474L64 0zm51.474-8v112H52v-112H39.474L64 14.422l24.526 36.789z\" fill=\"#1a48c4\"></path></g></svg>"
+      }
+    ],
+    "rank": 2,
+    "lastWeek": 0,
+    "change": "new",
+    "peakPosition": 2,
+    "weeksOnChart": 1
+  },
+  {
+    "artist": "Olivia Rodrigo",
+    "title": "Sour",
+    "image": "https://charts-static.billboard.com/img/2021/06/olivia-rodrigo-3wl-sour-5yt-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 3,
+    "lastWeek": 1,
+    "change": "down",
+    "peakPosition": 1,
+    "weeksOnChart": 6
+  },
+  {
+    "artist": "Lil Baby & Lil Durk",
+    "title": "The Voice Of The Heroes",
+    "image": "https://charts-static.billboard.com/img/2021/06/lil-baby-and-lil-durk-000-the-voice-of-the-heroes-jhs-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 4,
+    "lastWeek": 3,
+    "change": "down",
+    "peakPosition": 1,
+    "weeksOnChart": 4
+  },
+  {
+    "artist": "Polo G",
+    "title": "Hall Of Fame",
+    "image": "https://charts-static.billboard.com/img/2021/06/polo-g-n1o-hall-of-fame-0z2-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 5,
+    "lastWeek": 2,
+    "change": "down",
+    "peakPosition": 1,
+    "weeksOnChart": 3
+  },
+  {
+    "artist": "Morgan Wallen",
+    "title": "Dangerous: The Double Album",
+    "image": "https://charts-static.billboard.com/img/2021/01/morgan-wallen-nlu-dangerous-the-double-album-zbn-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 6,
+    "lastWeek": 5,
+    "change": "down",
+    "peakPosition": 1,
+    "weeksOnChart": 25
+  },
+  {
+    "artist": "Migos",
+    "title": "Culture III",
+    "image": "https://charts-static.billboard.com/img/2021/06/migos-ca0-culture-iii-5ct-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 7,
+    "lastWeek": 4,
+    "change": "down",
+    "peakPosition": 2,
+    "weeksOnChart": 3
+  },
+  {
+    "artist": "Bo Burnham",
+    "title": "Inside (The Songs)",
+    "image": "https://charts-static.billboard.com/img/2021/06/bo-burnham-9aw-inside-the-songs-oxy-180x180.jpg",
+    "award": true,
+    "awardsList": [
+      {
+        "awardName": "Gains In Performance",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 128 171.211\"><g data-name=\"Group 12\"><path data-name=\"Path 3036\" d=\"M0 87.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3037\" d=\"M0 127.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3038\" d=\"M0 167.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3039\" d=\"M24.526 59.211H44v112h40v-112h19.474L64 0zm51.474-8v112H52v-112H39.474L64 14.422l24.526 36.789z\" fill=\"#1a48c4\"></path></g></svg>"
+      }
+    ],
+    "rank": 8,
+    "lastWeek": 9,
+    "change": "up",
+    "peakPosition": 7,
+    "weeksOnChart": 4
+  },
+  {
+    "artist": "Dua Lipa",
+    "title": "Future Nostalgia",
+    "image": "https://charts-static.billboard.com/img/2020/04/dua-lipa-eqf-future-nostalgia-74z-180x180.jpg",
+    "award": false,
+    "awardsList": [],
+    "rank": 9,
+    "lastWeek": 7,
+    "change": "down",
+    "peakPosition": 3,
+    "weeksOnChart": 65
+  },
+  {
+    "artist": "Justin Bieber",
+    "title": "Justice",
+    "image": "https://charts-static.billboard.com/img/2021/04/justin-bieber-f8k-justice-gie-180x180.jpg",
+    "award": true,
+    "awardsList": [
+      {
+        "awardName": "Greatest gainer this week",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 156 168\"><g data-name=\"Group 11\"><path data-name=\"Path 3031\" d=\"M112 4H80l12 12-36 36-8-8L0 92l8 8 40-40 8 8 44-44 12 12z\" fill=\"#fcee21\"></path><path data-name=\"Path 3032\" d=\"M4 168h32v-40H4zm8-32h16v24H12z\" fill=\"#1a48c4\"></path><path data-name=\"Path 3033\" d=\"M44 168h32V96H44zm8-64h16v56H52z\" fill=\"#1a48c4\"></path><path data-name=\"Path 3034\" d=\"M124 168h32V0h-32zm8-160h16v152h-16z\" fill=\"#1a48c4\"></path><path data-name=\"Path 3035\" d=\"M84 168h32V64H84zm8-96h16v88H92z\" fill=\"#1a48c4\"></path></g></svg>"
+      },
+      {
+        "awardName": "Gains In Performance",
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto\" viewBox=\"0 0 128 171.211\"><g data-name=\"Group 12\"><path data-name=\"Path 3036\" d=\"M0 87.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3037\" d=\"M0 127.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3038\" d=\"M0 167.211v-24l64-32 64 32v24l-64-32z\" fill=\"#fcee21\"></path><path data-name=\"Path 3039\" d=\"M24.526 59.211H44v112h40v-112h19.474L64 0zm51.474-8v112H52v-112H39.474L64 14.422l24.526 36.789z\" fill=\"#1a48c4\"></path></g></svg>"
+      }
+    ],
+    "rank": 10,
+    "lastWeek": 14,
+    "change": "up",
+    "peakPosition": 1,
+    "weeksOnChart": 15
+  }
+]
