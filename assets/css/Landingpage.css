@@ -75,7 +75,7 @@ color: white;
     column-gap: 0px;
     column-rule: 2px solid white;
     padding-top: 50px;
-    
+    flex-wrap: wrap;
 }
 
 h4 {
