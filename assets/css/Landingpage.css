@@ -2,7 +2,7 @@ body {
     background-color: #23242a;
     margin: 0;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:serif;
 }
 
 ul {
@@ -52,7 +52,7 @@ li a {
 
 h1{
     font-size: 80px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:serif;
     margin-top: 150px;
     text-align: center;
 }
@@ -60,7 +60,7 @@ h1{
 button {
 color: #23242a;
 font-size: large;
-font-family: 'Times New Roman', Times, serif;
+font-family: serif;
 margin-top: 10px;
 cursor:pointer;
 }
