@@ -52,74 +52,57 @@ function getApi() {
   console.log(apiChoice)
   
   if(apiChoice == "All Time 100 Songs"){
+    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/greatest-hot-100-singles?range=1-10"
+    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "Billboard Hot 100"){
+    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/hot-100?date=2022-07-07&range=1-10"
+    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "Billboard Global 200"){
+    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/billboard-global-200?date=2021-07-07&range=1-10"
+    console.log(apiGet)
     console.log(apiUrl)
   }
   if(apiChoice == "All Time Summer Songs"){
+    apiGet = "billboard3.p.rapidapi.com"
     apiUrl = "https://billboard3.p.rapidapi.com/greatest-of-all-time-songs-of-the-summer?range=1-10"
+    console.log(apiGet)
     console.log(apiUrl)
   }
 
       var options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '7cd2cf7430mshe9e159f72142c49p1c67e0jsn0526c36f4cef',
-          'X-RapidAPI-Host': "billboard3.p.rapidapi.com"
+          'X-RapidAPI-Key': '5efa58815emsh6280383a06b5a25p1cb931jsn08fce52522f3',
+          'X-RapidAPI-Host': apiGet
         }
       };
 // The api URL, and options var is passed into the fetch api function, and the api is called 
       fetch(apiUrl, options)
         .then(response => response.json())
-        .then(function  (results) {
-          console.log(results)
+        .then(function  (data) {
+          console.log(data)
  
 
 //Loop over the data to generate List Items, each list item will have a link that will call the MusicAPI and redirect to the "where to listen to page".
-// Creating list Item elements Styling is added to the list items. They are rendered on the page. Event listener and function added to <li> 
-        for (var i = 0; i < results.length; i++) {
-          
-          // creating variables for API data and style attributes
-          var title = results[i].title
-          var artist = results[i].artist
-          var styles = {
-            "margin" : "10px",
-            "color" : "white",
-            "font-size" : "30px"
-          }
-          // Creating list item elements
-          var createListItem = document.createElement('li');  
-          // var createListItem2 = document.createElement('li');
-
-          // assigning style attributes 
-          Object.assign(createListItem.style, styles)
-          // assigning API data to text content attributes
-          createListItem.textContent = title + " - " + artist
-          // createListItem2.textContent = artist
-          // appending list item elements to ul element on HTML page
-          listElement.appendChild(createListItem);
-          // listElement.appendChild(createListItem2)
-          // adding event listener and function to be triggered on click 
-          // function adds clicked song to local storage to be later used in Music API on next page. 
-          // user is redirected to Listen Page
-          createListItem.addEventListener('click', function clicked(event){
-            var ok = event.target.textContent
-            console.log(ok)
-            var trackArtist = ok.split(" - ")
-            console.log(trackArtist)
-            var searchDeez = '{"track":"' + trackArtist[0] + '","artist":"' + trackArtist[1] + '","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
-            localStorage.setItem("apiBodyTitle", searchDeez)
-            window.location.assign("./listenplaces.html")
-      })
-    }
-  })
+      for (var i = 0; i < data.length; i++) {
+// Creating elements: list Item & link. Styling is added to the list items. They are rendered on the page. 
+        var createListItem = document.createElement('li');
+        createListItem.style = "font-size: large;"
+        createListItem.style = "margin: 10px;"
+        var link = document.createElement('a');
+        link.style = "color: white;"
+        link.textContent = data[i].rank + ". " + data[i].title + " - " + data[i].artist;
+        createListItem.appendChild(link);
+        listElement.appendChild(createListItem);
+      }
+    });
 }
 
 fetchButton.addEventListener('click', getApi);

@@ -1,4 +1,4 @@
-Billboard100 API   
+//Billboard100 API   
 const options = {
 	method: 'GET',
 	headers: {
@@ -45,7 +45,6 @@ var sources = [
 	  "napster",
 	  "qobuz",
 	  "qq-music",
-	  "yandex-music",
 	  "vk",
 	  "anghami",
 	  "zvuk",

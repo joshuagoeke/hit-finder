@@ -12,6 +12,7 @@ submitb.addEventListener("click", function(){
     localStorage.setItem("apiBodyTitle", searchDeez);
     window.location.assign("./pages/listenplaces.html");
     
+
 })
 
 const dropdowns = document.querySelectorAll('.dropdown');  
