@@ -55,6 +55,7 @@ h1{
     font-size: 80px;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 150px;
+    text-align: center;
 }
 
 button {
@@ -75,7 +76,7 @@ color: white;
     column-gap: 0px;
     column-rule: 2px solid white;
     padding-top: 50px;
-    flex-wrap: wrap;
+    
 }
 
 h4 {
@@ -86,6 +87,7 @@ form.search {
     padding-top: 25px;
     padding-right: 30px;
     font-size: large;
+    width: 300px;
 }
 
 input {
@@ -112,3 +114,23 @@ padding-left: 20px;
     opacity: .8;
     color: lightgray;
 }
+
+.grid_items {
+    padding: 3.75%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 0;
+    grid-row-gap: 20px;
+    
+  }
+ 
+
+  @media only screen and (min-width: 981px) {
+    .grid_items {
+      grid-template-columns: 30% 30% 30%;
+      grid-row-gap: 50px;
+    }
+    .grid_items > div {
+      padding: 30px;
+    }
+  }
