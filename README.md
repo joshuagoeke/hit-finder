@@ -1,6 +1,3 @@
-
-![Logo](./assets/images/hit_finder_logo_for_readme.jpg?raw=true)
-
 # Hit Finder
 
 Hit Finder is a useful website that allows for easily browsing the top songs on the Billboard Hot 100 and finding where to listen to them. It was created as a school project to practice the implementation of APIs (Billboard and musicAPI) and our experience with Materialize.
