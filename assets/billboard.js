@@ -117,17 +117,35 @@ function getApi() {
   })
 }
 
-fetchButton.addEventListener('click', getApi);
-var navsearch = document.getElementById("searchBtn")
-navsearch.addEventListener("click", function(event){
-  event.preventDefault()
-  console.log ("input confirm")
-  var input= document.getElementById("search").value;
+// fetchButton.addEventListener('click', getApi);
+// var navsearch = document.getElementById("searchBtn")
+// navsearch.addEventListener("click", function(event){
+//   event.preventDefault()
+//   console.log ("input confirm")
+//   var input= document.getElementById("search").value;
 
  
-        var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
-        localStorage.setItem("apiBodyTitle", searchDeez);
-        window.location.assign("listenplaces.html");
+//         var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+//         localStorage.setItem("apiBodyTitle", searchDeez);
+//         window.location.assign("listenplaces.html");
   
-  }
+//   }
+// )
+
+//submit button
+var submitb = document.getElementById('submit');  
+var searchField = document.getElementById('search-field')
+
+//take input value
+submitb.addEventListener("click", function(event){
+  event.preventDefault()
+  var input= searchField.value;
+  console.log(input)
+  
+
+    var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+    localStorage.setItem("apiBodyTitle", searchDeez);
+    window.location.assign("listenplaces.html");
+    
+ }
 )
