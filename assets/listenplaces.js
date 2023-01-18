@@ -7,6 +7,8 @@ var tracksEl;
 var listEl = document.getElementById('results-list')
 
 
+
+
 //JSON parse of searchObject AND puts the song name and artist in the search title
 function parseAndTitle(){
     searchObject = localStorage.getItem("apiBodyTitle")
@@ -101,5 +103,5 @@ musicAPIcall()
 
 // testBtn.addEventListener('click', () => {
 //     console.log('test button clicked')
-//     musicAPIcall()
+    
 // });
