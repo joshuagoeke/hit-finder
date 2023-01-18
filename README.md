@@ -1,5 +1,5 @@
 
-![Logo](./assets/images/Hit finder.png?raw=true)
+![Logo](./assets/images/hit_finder_logo_for_readme.jpg?raw=true)
 
 # Hit Finder
 
