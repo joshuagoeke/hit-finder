@@ -71,7 +71,7 @@ function getApi() {
       var options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': '7cd2cf7430mshe9e159f72142c49p1c67e0jsn0526c36f4cef',
+          'X-RapidAPI-Key': '40207c7b39msh22e1e2b12068043p10e59djsn538e8d8321d0',
           'X-RapidAPI-Host': "billboard3.p.rapidapi.com"
         }
       };
