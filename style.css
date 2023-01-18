@@ -1,15 +1,11 @@
 *{
-    color:#fff
+    color:#fff;
+    font-family: serif;
 }
 
-h1{
-    color: #000;
+main{
+    display: inline-flex;
 }
-form.search-field{
-    min-width: 15em;
-    position: relative;
-    margin: 2em;
-    }
 
 /* copied from Darren's billboard.css */
 .dropdown{
