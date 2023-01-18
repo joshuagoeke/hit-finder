@@ -9,7 +9,6 @@ dropdowns.forEach(dropdown => {
     const options = dropdown.querySelectorAll('.menu li');
     const selected = dropdown.querySelector('.selected');
     var fetchButton = document.getElementById('fetch-button');
-
     select.addEventListener('click', () => {
         select.classList.toggle('select.clicked');
         caret.classList.toggle('caret-rotate');
@@ -119,5 +118,16 @@ function getApi() {
 }
 
 fetchButton.addEventListener('click', getApi);
+var navsearch = document.getElementById("searchBtn")
+navsearch.addEventListener("click", function(event){
+  event.preventDefault()
+  console.log ("input confirm")
+  var input= document.getElementById("search").value;
 
-
+ 
+        var searchDeez = '{"track":"' + input + '","artist":"","type":"track","sources":["amazon-music","apple-music","deezer","pandora","sound-cloud","spotify","tidal","youtube","youtube-music","napster","qobuz","qq-music","vk","anghami","zvuk","gaana","jiosaavn","resso","boomplay"]}'
+        localStorage.setItem("apiBodyTitle", searchDeez);
+        window.location.assign("listenplaces.html");
+  
+  }
+)
