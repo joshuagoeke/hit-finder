@@ -10,25 +10,22 @@
 
     <title>Billboard</title>
 </head>
-    <body class="grey darken-4 row">
-      <nav class="black">
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="../index.html">Home</a></li>
-            </ul>
-            <button class="right" id="searchBtn">
-              search
-            </button>
-              <div class="input-field right">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-
-              </div>
+    <body >
+      <div id="navlist">
+        <a href="../index.html">Home</a>
+        <!-- search bar right align -->
+        <div class="search">
+            <form class="search">
+                <input id="search-field" type="text" placeholder="                 Search Song or Artist" name="search">
+                <button type="submit" id="submit" :hover>GO</button></form>
+            </form>
         </div>
-    </nav>
+    </div>
+      
+        
+    
       <header class="col s12">
-        <h1 class="white-text center-align">Billboard</h1>
+        <h1 class="white-text center-align" style="padding-top: 40px; ;">Billboard</h1>
       </header>
       <main class="grey darken-4">
         <section class="grey darken-4">
