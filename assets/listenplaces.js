@@ -70,7 +70,7 @@ function renderList(object){
         createListItem.appendChild(link);
         listEl.appendChild(createListItem); 
     };
-
+    document.getElementById('progress').style = "display: none;"
     
 };
 
