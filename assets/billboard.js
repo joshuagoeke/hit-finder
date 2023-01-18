@@ -117,7 +117,7 @@ function getApi() {
   })
 }
 
-// fetchButton.addEventListener('click', getApi);
+fetchButton.addEventListener('click', getApi);
 // var navsearch = document.getElementById("searchBtn")
 // navsearch.addEventListener("click", function(event){
 //   event.preventDefault()

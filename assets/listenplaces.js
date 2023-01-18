@@ -80,7 +80,7 @@ function musicAPIcall(){
         method: 'POST',
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': '21a94dfd94msh2a68301eae3f279p133d0djsnebcd3000cd74',
+            'X-RapidAPI-Key': '40207c7b39msh22e1e2b12068043p10e59djsn538e8d8321d0',
             'X-RapidAPI-Host': 'musicapi13.p.rapidapi.com'
         },
         body: searchObject,
