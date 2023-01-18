@@ -138,6 +138,7 @@ object-fit: cover;
     padding-top: 80px;
     max-width: 100%;
     height: auto;
+    mix-blend-mode:color-dodge;
   }
 
 .wrapper{
