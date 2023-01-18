@@ -1,5 +1,5 @@
 body {
-    background-color: #23242a;
+    background-color: #202020;
     margin: 0;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -53,7 +53,6 @@ li a {
 h1{
     font-size: 80px;
     font-family:serif;
-    margin-top: 150px;
     text-align: center;
 }
 
@@ -72,23 +71,21 @@ color: black;
 
 .container {
     width: fit-content;
-    column-count: 3;
-    column-gap: 0px;
-    column-rule: 2px solid white;
-    padding: 30px;
+    justify-content: center;
 }
 
 h4 {
-    padding-top: 0px;
+    padding-top: 30px;
+    
 }
 
 form.search {
     padding-top: 25px;
-    padding-right: 10px;
+    padding-right: 0;
     font-size: 50px;
     height: auto;
-    width: 400px;
-    float: right;
+    width: auto;
+    align-content: center;
 }
 
 input {
@@ -105,11 +102,10 @@ div.dropdown.col.s4{
 .image-billboard{
 opacity: 1;
 transition: .3s ease;
-height: 100px;
-width: 120px;
+height: 120;
+width: 140;
 object-fit: cover;
-padding-left:10px;
-float: right 20px;
+
 }
 
 .image-billboard:hover{
@@ -117,27 +113,26 @@ float: right 20px;
     color: lightgray;
 }
 
-.grid_items {
+/* .grid_items {
     padding: 3.75%;
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: 0;
     grid-row-gap: 20px;
-    align-items: center;
-    
+    justify-content: center;
   }
  
 
-  @media only screen and (min-width: 1400px) {
+  @media only screen and (min-width: 700px) {
     .grid_items {
       grid-template-columns: 30% 30% 30%;
-      grid-row-gap: 50px;
+      grid-row-gap: auto;
     }
     .grid_items > div {
       padding: 10px;
       padding-left: 50px;
     }
-  }
+  } */
 
   .Hit-Finder {
     padding-top: 80px;
@@ -145,3 +140,27 @@ float: right 20px;
     height: auto;
   }
 
+.wrapper{
+    padding: 30px 30px 300px;
+}
+  .columns {
+    margin: 0 -15px;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .col {
+    margin: 0 15px 30px;
+    padding: 20px;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+.col-33 {
+    width: calc(33% - 30px);
+}
+  @media screen and (max-width: 800px) {
+    .col-33 {
+        width: 100%;
+    }
+  }

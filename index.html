@@ -24,24 +24,28 @@
         <!-- <H1>HIT FINDER</H1> -->
     </header>
     <main>
-       <container> 
-        <div class="grid_items">
-            <div class="grind_item">
-              <form  class="search" >
+       <div class="wrapper"> 
+          <div class="columns">
+            <div class="col col-33">
+              <form  class="search">
                 <input id="search-field" type="text" placeholder="Search for music by song" name="search">
                   <button  type="submit" id="submit">Find</button></form>
               </form>
             </div>
-            <div class="grind_items" style="width: 410px;"><h4>OR</h4></div>
-              
-            <div class="grind iteams" style="padding-left: 115px;"><p class="image-billboard">
+          
+            <div class="col col-33">
+              <h4>OR</h4>
+            </div>
+    
+            <div class="col col-33" >
+              <p class="image-billboard"> 
                 <a href="./pages/billboard.html">
                   <img class="image-billboard" src="assets/images/image billboard.png">
                 </a>
               </p>
             </div>
           </div>
-        </container> 
+        </div> 
     </main>
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
